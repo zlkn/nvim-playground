@@ -4,5 +4,6 @@ services:
     image: neovim-playground
     volumes:
       - ${HOME}/.config/fish:/root/.config/fish:ro
+      - .:/root./config
     tty: true
     stdin_open: true

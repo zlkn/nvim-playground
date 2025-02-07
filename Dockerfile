@@ -33,6 +33,7 @@ RUN apt-get update && apt-get install -y \
 
 # Install common tools
 RUN apt-get update && apt-get install -y \
+    git \
     curl \
     tmux \
     tree \
@@ -47,9 +48,11 @@ RUN git clone --depth 1 https://github.com/neovim/neovim.git
 
 WORKDIR /usr/src/neovim
 
-RUN make CMAKE_BUILD_TYPE=RelWithDebInfo
+RUN make CMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
 
 RUN make install
+
+WORKDIR /root/config
 
 CMD ["fish"]
 
