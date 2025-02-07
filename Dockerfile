@@ -4,7 +4,10 @@ FROM debian:unstable
 # Avoid interactive prompts during package installation
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install build tools, Neovim dependencies, and Fish shell
+ENV PLAYGROUND=True
+ENV CMAKE_BUILD_TYPE="Release"
+
+# Install build tools, Neovim dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     cmake \
@@ -26,24 +29,27 @@ RUN apt-get update && apt-get install -y \
     lua5.1-dev \
     libluajit-5.1-dev \
     libjemalloc-dev \
+ && rm -rf /var/lib/apt/lists/*
+
+# Install common tools
+RUN apt-get update && apt-get install -y \
+    curl \
+    tmux \
+    tree \
+    ripgrep \
+    fzf \
     fish \
  && rm -rf /var/lib/apt/lists/*
 
-# Set working directory for source code
 WORKDIR /usr/src
 
-# Clone the Neovim repository (adjust branch or tag as needed)
-RUN git clone https://github.com/neovim/neovim.git
+RUN git clone --depth 1 https://github.com/neovim/neovim.git
 
-# Switch to the Neovim source directory
 WORKDIR /usr/src/neovim
 
-# Build Neovim with a release configuration including debug information
 RUN make CMAKE_BUILD_TYPE=RelWithDebInfo
 
-# Install Neovim (by default, this installs into /usr/local)
 RUN make install
 
-# Set the default command to run Fish shell interactively
 CMD ["fish"]
 
