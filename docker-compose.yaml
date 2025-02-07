@@ -3,7 +3,16 @@ services:
   neovim:
     image: neovim-playground
     volumes:
-      - ${HOME}/.config/fish:/root/.config/fish:ro
-      - .:/root./config
+      - ${HOME}/.config/fish:/home/playground/.config/fish:ro
+      - ./vim:/home/playground./config/vim
+      - neovim-playground:/home/playground/neovim-playground
     tty: true
     stdin_open: true
+
+volumes:
+  neovim-playground:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: ${PWD}

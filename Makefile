@@ -21,8 +21,12 @@ help:   ## Show this help
 
 
 build: ## Build the Docker image for neovim-playground.
+	export UID=$(id -u)
+	export GID=$(id -g)
 	docker build -t neovim-playground .
 
 run: ## Run the neovim service using Docker Compose.
+	export UID=$(id -u)
+	export GID=$(id -g)
 	docker compose run --rm neovim
 

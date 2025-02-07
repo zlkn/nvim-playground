@@ -45,14 +45,16 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /usr/src
 
 RUN git clone --depth 1 https://github.com/neovim/neovim.git
-
 WORKDIR /usr/src/neovim
-
 RUN make CMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
-
 RUN make install
 
-WORKDIR /root/config
+
+RUN groupadd -g 1000 playground && \
+    useradd -m -u 1000 -g  playground playground
+
+USER playground
+WORKDIR /home/playground
 
 CMD ["fish"]
 
