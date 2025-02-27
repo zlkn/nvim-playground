@@ -5,12 +5,19 @@ services:
     user: "1000:1000"
     volumes:
       - ${HOME}/.config/fish:/home/playground/.config/fish:ro
-      - ${PWD}/vim:/home/playground./config/vim:rw
+      - nvim:/home/playground/.config/nvim:rw
       - neovim-playground:/home/playground/neovim-playground:rw
+      - ${HOME}/.editorconfig:/home/playgound/.editorconfig:ro
     tty: true
     stdin_open: true
 
 volumes:
+  nvim:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: ${PWD}/nvim
   neovim-playground:
     driver: local
     driver_opts:
