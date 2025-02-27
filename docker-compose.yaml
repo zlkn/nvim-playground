@@ -2,10 +2,11 @@
 services:
   neovim:
     image: neovim-playground
+    user: "1000:1000"
     volumes:
       - ${HOME}/.config/fish:/home/playground/.config/fish:ro
-      - ./vim:/home/playground./config/vim
-      - neovim-playground:/home/playground/neovim-playground
+      - ${PWD}/vim:/home/playground./config/vim:rw
+      - neovim-playground:/home/playground/neovim-playground:rw
     tty: true
     stdin_open: true
 

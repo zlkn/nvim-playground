@@ -1,0 +1,9 @@
+return {
+  ["flash.nvim"] = "3c942666f115e2811e959eabbdd361a025db8b63",
+  ["github-nvim-theme"] = "c106c9472154d6b2c74b74565616b877ae8ed31d",
+  lualine = "f4f791f67e70d378a754d02da068231d2352e5bc",
+  ["mini.clue"] = "8fc0676abb993c85434655353c72f1dcb6b46fb7",
+  ["mini.move"] = "c8b30e92dd2668dd6e56a9a23cb7d4ee38c2266d",
+  ["mini.nvim"] = "a84b7e555fe382c1859e6ca46b4983c822a1f77f",
+  ["mini.pairs"] = "1a3e73649c0eaef2f6c48ce1e761c6f0a7c11918"
+}
