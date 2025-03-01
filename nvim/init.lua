@@ -10,10 +10,6 @@ local mini_path = path_package .. 'pack/deps/start/mini.nvim'
 -- Set up 'mini.deps' (customize to your liking)
 require('mini.deps').setup({ path = { package = path_package } })
 
--- Use 'mini.deps'. `now()` and `later()` are helpers for a safe two-stage
--- startup and are optional.
-local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
-
 require("keymaps")
 require("options")
 require("autocmds")
@@ -21,19 +17,11 @@ require("plugins.colorscheme")
 require("plugins.lualine")
 require("plugins.blink")
 require("plugins.flash")
-require("plugins.telescope")
+-- require("plugins.telescope")
 require('plugins.lazydev')
+require('plugins.mini')
 
-add('echasnovski/mini.clue')
-require('mini.clue').setup({})
-
-add({ source = 'echasnovski/mini.move' })
-require('mini.move').setup({})
-
-add({ source = 'echasnovski/mini.files' })
-require('mini.files').setup({})
-
-add({ source = 'echasnovski/mini.pairs' })
+MiniDeps.add({ source = 'echasnovski/mini.pairs' })
 require('mini.pairs').setup({
   -- skip autopair when next character is one of these
   skip_next = [=[[%w%%%'%[%"%.%`%$]]=],
@@ -45,4 +33,32 @@ require('mini.pairs').setup({
   -- better deal with markdown code blocks
   markdown = true,
 })
+
+
+-- Keymaps
+-- Enhance buffer scroling
+vim.keymap.set("n", "<S-Enter>", "<C-d>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Enter>", "<C-u>", { noremap = true, silent = true })
+
+-- Keymaps for run lua code in selection
+vim.keymap.set("n", "<leader>rx", "<cmd>source %<CR>", {desc = "Execute lua code"})
+vim.keymap.set("v", "<leader>rx", ":.lua<CR>", { desc = "Execute lua code"})
+
+-- Split window
+vim.keymap.set('n', '<leader>\\', '<cmd>vsplit<CR>', { desc = 'Split vertial' })
+vim.keymap.set('n', '<leader>-', '<cmd>split<CR>', { desc = 'Split horisontal' })
+
+-- Jump
+vim.keymap.set("n", "<C-h>", "<C-w>h", { silent = true })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { silent = true })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { silent = true })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { silent = true })
+vim.keymap.set('n', 'H', ':bnext<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', 'L', ':bprev<CR>', { noremap = true, silent = true })
+
+-- Exit
+-- Map <leader>qq to exit without saving
+vim.keymap.set('n', '<leader>qq', ':q!<CR>', { desc = "Exit without saving", noremap = true, silent = true })
+-- Map <leader>wq to save and then exit
+vim.keymap.set('n', '<leader>wq', ':wq<CR>', { desc = "Save and Exit", noremap = true, silent = true })
 
