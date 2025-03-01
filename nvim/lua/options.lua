@@ -1,3 +1,5 @@
+vim.g.mapleader = ' '
+
 vim.o.mouse       = 'a' -- Enable mouse support
 
 -- Don't spawn trash on fs
@@ -19,7 +21,6 @@ vim.o.wrap          = false   -- Display long lines as just one line
 vim.o.signcolumn    = 'yes'   -- Always show sign column (otherwise it will shift text)
 vim.o.fillchars     = 'eob: ' -- Don't show `~` outside of buffer
 
-vim.g.mapleader = ' '
 
 vim.opt.clipboard = "unnamedplus"
 
