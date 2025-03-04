@@ -36,3 +36,10 @@ vim.o.completeopt   = 'menuone,noselect' -- Customize completions
 vim.o.virtualedit   = 'block'            -- Allow going past the end of line in visual block mode
 vim.o.formatoptions = 'qjl1'             -- Don't autoformat comments
 
+
+
+-- transparent background
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })

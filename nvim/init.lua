@@ -13,27 +13,21 @@ require('mini.deps').setup({ path = { package = path_package } })
 require("keymaps")
 require("options")
 require("autocmds")
+
 require("plugins.colorscheme")
 require("plugins.lualine")
-require("plugins.blink")
+-- require("plugins.blink")
 require("plugins.flash")
 -- require("plugins.telescope")
-require('plugins.lazydev')
-require('plugins.mini')
+-- require('plugins.lazydev')
 
-MiniDeps.add({ source = 'echasnovski/mini.pairs' })
-require('mini.pairs').setup({
-  -- skip autopair when next character is one of these
-  skip_next = [=[[%w%%%'%[%"%.%`%$]]=],
-  -- skip autopair when the cursor is inside these treesitter nodes
-  skip_ts = { "string" },
-  -- skip autopair when next character is closing pair
-  -- and there are more closing pairs than opening pairs
-  skip_unbalanced = true,
-  -- better deal with markdown code blocks
-  markdown = true,
-})
-
+require('plugins.mini.animate')
+require('plugins.mini.clue')
+require('plugins.mini.files')
+require('plugins.mini.pairs')
+require('plugins.mini.pick')
+require('plugins.mini.surround')
+require('plugins.indent-blankline')
 
 -- Keymaps
 -- Enhance buffer scroling
