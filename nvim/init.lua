@@ -23,6 +23,7 @@ require("plugins.flash")
 
 require('plugins.mini.animate')
 require('plugins.mini.clue')
+require('plugins.mini.diff')
 require('plugins.mini.files')
 require('plugins.mini.pairs')
 require('plugins.mini.pick')
