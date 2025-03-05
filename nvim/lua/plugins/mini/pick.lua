@@ -7,13 +7,19 @@ MiniDeps.later(
 			'n',
 			'<leader><leader>',
 			function() MiniPick.builtin.files() end,
-			{desc = 'FZF picker for files'}
+			{desc = 'fzf picker for files'}
 		)
 		vim.keymap.set(
 			'n',
 			'<leader>/',
 			function() MiniPick.builtin.grep_live() end,
-			{desc = 'FZF picker for files'}
+			{desc = 'fzf live grep'}
+		)
+		vim.keymap.set(
+			'n',
+			'<leader>,',
+			function() MiniPick.builtin.buffers() end,
+			{ desc = 'fzf picker for buffers'}
 		)
 	end
 
