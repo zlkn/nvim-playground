@@ -32,6 +32,7 @@ require("plugins.mini.hipatterns")
 require("plugins.mini.icons")
 
 require("plugins.indent-blankline")
+require("plugins.rainbow-delimiter")
 
 -- git ingegration
 require("plugins.git.gitsigns")
