@@ -39,4 +39,5 @@ require('plugins.git.diffview')
 
 -- 
 require('plugins.nvim-treesitter')
+require('plugins.nvim-treesitter-context')
 
