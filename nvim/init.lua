@@ -27,6 +27,16 @@ require('plugins.mini.files')
 require('plugins.mini.pairs')
 require('plugins.mini.pick')
 require('plugins.mini.surround')
+require('plugins.mini.cursorword')
+require('plugins.mini.hipatterns')
+require('plugins.mini.icons')
+
 require('plugins.indent-blankline')
-require('plugins.gitsigns')
+
+-- git ingegration
+require('plugins.git.gitsigns')
+require('plugins.git.diffview')
+
+-- 
+require('plugins.nvim-treesitter')
 
