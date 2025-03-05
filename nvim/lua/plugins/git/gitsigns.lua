@@ -1,7 +1,6 @@
-MiniDeps.add('lewis6991/gitsigns.nvim')
-MiniDeps.later(
-	function()
-		local gitsigns = require('gitsigns')
-		gitsigns.setup()
-	end
-)
+MiniDeps.add("lewis6991/gitsigns.nvim")
+MiniDeps.later(function()
+    local gitsigns = require("gitsigns")
+    gitsigns.setup()
+    vim.api.nvim_set_keymap("n", "<Space>bl", [[<Cmd>lua require"gitsigns".blame_line()<CR>]], { noremap = true, silent = true })
+end)

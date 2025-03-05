@@ -6,7 +6,6 @@ if not vim.loop.fs_stat(mini_path) then
     vim.fn.system(clone_cmd)
     vim.cmd('echo "Installed `mini.nvim`" | redraw')
 end
-
 -- Set up 'mini.deps' (customize to your liking)
 require("mini.deps").setup({ path = { package = path_package } })
 
@@ -15,6 +14,7 @@ require("autocmds")
 require("keymaps")
 
 require("plugins.colorscheme")
+require("plugins.colorizer")
 require("plugins.lualine")
 -- require("plugins.blink")
 require("plugins.flash")
