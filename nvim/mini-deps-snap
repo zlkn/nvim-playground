@@ -5,11 +5,18 @@ return {
   ["gitsigns.nvim"] = "4c40357994f386e72be92a46f41fc1664c84c87d",
   ["indent-blankline.nvim"] = "e10626f7fcd51ccd56d7ffc00883ba7e0aa28f78",
   lualine = "f4f791f67e70d378a754d02da068231d2352e5bc",
+  ["mason.nvim"] = "fc98833b6da5de5a9c5b1446ac541577059555be",
   ["mini.animate"] = "13e170c13030b043aa8ad4311012ec0eaba0d5c7",
   ["mini.clue"] = "08901d2223797aa25611c33aaf9d8a1049a653bb",
+  ["mini.cursorword"] = "939ffcc8c57694608ac0896418d4b9a7c5273909",
   ["mini.files"] = "0a396f5ca5516a07959ae2c00667e1a26c20f0ea",
+  ["mini.hipatterns"] = "fbf1e2195fdd65cf1bc970316c28098257728868",
+  ["mini.icons"] = "ec61af6e606fc89ee3b1d8f2f20166a3ca917a36",
   ["mini.nvim"] = "307221b90376b68fc7e007e9315836370e9efb8f",
   ["mini.pairs"] = "1a3e73649c0eaef2f6c48ce1e761c6f0a7c11918",
   ["mini.pick"] = "12ea14f8e285d1bcc909116685fdbb129a89d546",
-  ["mini.surround"] = "aa5e245829dd12d8ff0c96ef11da28681d6049aa"
+  ["mini.surround"] = "aa5e245829dd12d8ff0c96ef11da28681d6049aa",
+  ["nvim-lspconfig"] = "84e0cd5a3c58e88ef706fdf4a1eed59ded1d3ce2",
+  ["nvim-treesitter"] = "2b0760dca2354fecf48ea35fdf1d753a232e3de2",
+  ["nvim-treesitter-context"] = "198720b4016af04c9590f375d714d5bf8afecc1a"
 }

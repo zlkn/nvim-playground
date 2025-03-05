@@ -27,6 +27,23 @@ local function git_root()
     end
 end
 
+local function lsp_status()
+	return function()
+		if vim.lsp.buf_get_clients() > 0 then
+		local lsp = vim.lsp.util.get_progress_messages()[1]
+			if lsp then
+				local name = lsp.name or ""
+				local msg = lsp.message or ""
+				local percentage = lsp.percentage or 0
+				local title = lsp.title or ""
+				return string.format("lsp: %%<%s: %s %s (%s%%%%) ", name, title, msg, percentage)
+			end
+		end
+		return "lsp: none"
+	end
+end
+
+
 require('lualine').setup({
         options = {
             theme = auto_theme_custom,
@@ -45,7 +62,7 @@ require('lualine').setup({
                 {
                     "diagnostics",
                     symbols = {
-			    error = "✘",
+			error = "✘",
 		      warn  = "▲",
 		      info  = "ℹ",
 		      hint  = "⚑",
@@ -66,6 +83,7 @@ require('lualine').setup({
                     },
                 },
             },
-            lualine_z = {},
+            lualine_z = {{lsp_status()}},
         }
 })
+

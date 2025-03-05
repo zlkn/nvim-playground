@@ -40,4 +40,6 @@ require('plugins.git.diffview')
 -- 
 require('plugins.nvim-treesitter')
 require('plugins.nvim-treesitter-context')
+require('plugins.nvim-lspconfig')
+require('plugins.mason')
 
